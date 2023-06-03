@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: e-commerce Managment System
+    author: Jahangirzada Nurlan
+    version: 1.0.0
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/e_commerce
+    username: postgres
+    password: root
+  jpa:
+    showSql: true
+    hibernate:
+      ddlAuto: update
