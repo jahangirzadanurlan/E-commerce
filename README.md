@@ -62,14 +62,15 @@ Endpoints:
           /{id}
               GET – find by id
               PUT – update product
-
-
-/cart
+ /cart
     GET – all product in cart --findAll()
      POST – add product to cart--save()
      DELETE – remove product from cart --delete()
     /checkout – (kart məlumatlarını daxil edəcək və ödəniş olunmasını simulyasiya edəcəyik.)
         POST – buy product in cart --update()
+
+
+
 
 
 
