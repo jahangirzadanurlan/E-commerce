@@ -69,6 +69,7 @@ Endpoints:
     /checkout – (kart məlumatlarını daxil edəcək və ödəniş olunmasını simulyasiya edəcəyik.)
         POST – buy product in cart --update()
 
+![Untitled Diagram drawio (1)](https://github.com/jahangirzadanurlan/e-commerce/assets/103985861/5635be22-83e8-497a-8366-4df9c04f7357)
 
 
 
