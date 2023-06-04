@@ -11,7 +11,6 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class BrandResponseDto {
-    Long category_id;
     String name;
     String description;
 }

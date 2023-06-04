@@ -4,8 +4,8 @@ import com.example.ecommerce.dto.request.ProductRequestDto;
 import com.example.ecommerce.dto.response.ProductResponseDto;
 import com.example.ecommerce.dto.response.ResponseDto;
 import com.example.ecommerce.entity.Brand;
-import com.example.ecommerce.entity.Category;
 import com.example.ecommerce.entity.Product;
+import com.example.ecommerce.exception.BrandNotFoundException;
 import com.example.ecommerce.repository.BrandRepository;
 import com.example.ecommerce.repository.CategoryRepository;
 import com.example.ecommerce.repository.ProductRepository;
@@ -34,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
             productRepository.save(product);
             return new ResponseDto("Save is successful!");
         } else {
-            return new ResponseDto("Invalid category_id!");
+            throw new BrandNotFoundException();
         }
     }
 

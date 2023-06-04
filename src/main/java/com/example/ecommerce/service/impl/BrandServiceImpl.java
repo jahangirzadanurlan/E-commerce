@@ -5,6 +5,7 @@ import com.example.ecommerce.dto.response.BrandResponseDto;
 import com.example.ecommerce.dto.response.ResponseDto;
 import com.example.ecommerce.entity.Brand;
 import com.example.ecommerce.entity.Category;
+import com.example.ecommerce.exception.CategoryNotFoundException;
 import com.example.ecommerce.repository.BrandRepository;
 import com.example.ecommerce.repository.CategoryRepository;
 import com.example.ecommerce.service.BrandService;
@@ -31,7 +32,7 @@ public class BrandServiceImpl implements BrandService {
             brandRepository.save(brand);
             return new ResponseDto("Save is successful!");
         } else {
-            return new ResponseDto("Invalid category_id!");
+            throw new CategoryNotFoundException();
         }
     }
 

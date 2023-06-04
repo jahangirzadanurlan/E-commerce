@@ -4,6 +4,7 @@ import com.example.ecommerce.dto.request.CartRequestDto;
 import com.example.ecommerce.dto.response.CartResponseDto;
 import com.example.ecommerce.dto.response.ResponseDto;
 import com.example.ecommerce.entity.Cart;
+import com.example.ecommerce.exception.CartNotFoundException;
 import com.example.ecommerce.repository.CartRepository;
 import com.example.ecommerce.service.CartService;
 import lombok.RequiredArgsConstructor;
@@ -22,9 +23,12 @@ public class CartServiceImpl implements CartService {
     @Override
     public ResponseDto save(CartRequestDto cartRequestDto) {
         Cart cart=cartRepository.save(modelMapper.map(cartRequestDto,Cart.class));
-        return cart!=null?
-                new ResponseDto("Save is successfully!"):
-                new ResponseDto("Save is unsuccessfully!!!");
+        if(cart!=null){
+            return new ResponseDto("Save is successfully!");
+        }else {
+            throw new CartNotFoundException();
+        }
+
     }
 
     @Override

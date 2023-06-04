@@ -4,6 +4,7 @@ import com.example.ecommerce.dto.request.CategoryRequestDto;
 import com.example.ecommerce.dto.response.CategoryResponseDto;
 import com.example.ecommerce.dto.response.ResponseDto;
 import com.example.ecommerce.entity.Category;
+import com.example.ecommerce.exception.CategoryNotFoundException;
 import com.example.ecommerce.repository.CategoryRepository;
 import com.example.ecommerce.service.CategoryService;
 import lombok.RequiredArgsConstructor;
@@ -24,8 +25,11 @@ public class CategoryServiceImpl implements CategoryService {
     public ResponseDto save(CategoryRequestDto categoryRequestDto) {
         Category category=categoryRepository.save(modelMapper.map(categoryRequestDto, Category.class));
         Category category1=new Category();
-        return category!=null ? new ResponseDto("Category Created Successfully!"):
-                new ResponseDto("Category Created unsuccessfully!!!");
+        if(category!=null){
+            return new ResponseDto("Category Created Successfully!");
+        }else {
+            throw new CategoryNotFoundException();
+        }
     }
 
     @Override
