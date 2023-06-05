@@ -4,10 +4,6 @@ Building 187C, 115 Heydar Aliyev Ave, Baku 1029  055 032 77 78
 ecommerce@gmail.com  www.ecommerce.com
 
 
-Div students
-Basic project for exam
-
-
 SCenario
 
 E-commerce
